@@ -76,12 +76,12 @@ namespace AppUIBasics.ControlPages
             private async void Page_Loaded(object sender, RoutedEventArgs e)
             {
 
-              /*  if (Previewer != null)
+                if (Previewer != null)
                 {
                     Previewer.LinkClicked += Previewer_LinkClicked;
-                    Previewer.ImageClicked += Previewer_ImageClicked;
-                    Previewer.CodeBlockResolving += Previewer_CodeBlockResolving;
-                }*/
+                Previewer.ImageClicked += Previewer_ImageClicked;
+                Previewer.CodeBlockResolving += Previewer_CodeBlockResolving;
+                }
 
                 // Load the initial demo data from the file.  Make sure the file properties are set to 
                 // Build Action - Content and Copy to Output Directory - Always
@@ -100,6 +100,21 @@ namespace AppUIBasics.ControlPages
                 }
 
             }
+
+        private void Previewer_CodeBlockResolving(object sender, controls.CodeBlockResolvingEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Previewer_ImageClicked(object sender, controls.LinkClickedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Previewer_LinkClicked(object sender, controls.LinkClickedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
