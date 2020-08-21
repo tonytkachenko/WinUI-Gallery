@@ -1429,6 +1429,25 @@
           ]
         },
         {
+          "UniqueId": "TwoPaneView",
+          "Title": "TwoPaneView",
+          "Subtitle": "Represents a layout control that helps you manage the display of apps that have 2 distinct areas of content, like a master/detail view",
+          "ImagePath": "ms-appx:///Assets/Canvas.png",
+          "Description": "Use a TwoPaneView when you have 2 distinct areas of content that should automatically rearrange and resize to best fit the window.",
+          "Content": "<p>Look at the <i>TwoPaneViewPage.xaml</i> file in Visual Studio to see the full code for this page.</p>",
+          "IsNew": true,
+          "Docs": [
+            {
+              "Title": "TwoPaneView - API",
+              "Uri": "https://docs.microsoft.com/en-us/uwp/api/microsoft.ui.xaml.controls.twopaneview"
+            },
+            {
+              "Title": "Guidelines",
+              "Uri": "https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/two-pane-view"
+            }
+          ]
+        },
+        {
           "UniqueId": "VariableSizedWrapGrid",
           "Title": "VariableSizedWrapGrid",
           "Subtitle": "A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns.",

@@ -1,0 +1,15 @@
+﻿TwoPaneView is a layout control that helps you manage the display of apps that have 2 distinct areas of content, like a master/detail view.
+
+IMPORTANT: This article describes functionality and guidance that is in public preview and may be substantially modified before it's generally available. Microsoft makes no warranties, express or implied, with respect to the information provided here.
+
+While it works on all Windows devices, the TwoPaneView control is designed to help you take full advantage of dual-screen devices automatically, with no special coding needed. On a dual-screen device, the two-pane view ensures that the user interface (UI) is split cleanly when it spans the gap between screens, so that your content is presented on either side of the gap.
+
+NOTE: A dual-screen device is a special kind of device with unique capabilities. It's not equivalent to a desktop device with multiple monitors. For more info about dual-screen devices, see Introduction to dual-screen devices. (See Show multiple views for more info about ways you can optimize your app for multiple monitors.)
+
+Is this the right control?
+Use the two-pane view when you have 2 distinct areas of content and:
+
+1) The content should automatically rearrange and resize to best fit the window.
+2) The secondary area of content should show/hide based on available space.
+3) The content should split cleanly between the 2 screens of a dual-screen device.
+
