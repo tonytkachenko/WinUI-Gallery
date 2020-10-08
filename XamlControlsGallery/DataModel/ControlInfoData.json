@@ -1350,7 +1350,7 @@
             "RelativePanel"
           ]
         },
-                {
+        {
           "UniqueId": "RadioButtons",
           "Title": "RadioButtons",
           "Subtitle": "A control that displays a group of mutually exclusive options with keyboarding and accessibility support.",

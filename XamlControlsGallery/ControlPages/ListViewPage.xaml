@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 //*********************************************************
 //
 // Copyright (c) Microsoft. All rights reserved.
@@ -96,12 +96,25 @@
                     This is a basic ListView that has the full source code below. <LineBreak/>Other samples on this page display only the additional markup needed to customize a simple ListView like this one.
                 </TextBlock>
                 <ListView x:Name="BaseExample"
-                    ItemTemplate="{StaticResource BasicListViewTemplate}"
-                    BorderThickness="1"
-                    BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
                     Width="350" 
                     Height="400"
-                    HorizontalAlignment="Left"/>
+                          CornerRadius="4"
+                          Background="AliceBlue">
+                    <x:String>Item 1</x:String>
+                    <x:String>Item 2</x:String>
+                    <x:String>Item 3</x:String>
+                    <x:String>Item 4</x:String>
+                    <x:String>Item 5</x:String>
+                    <x:String>Item 6</x:String>
+                    <x:String>Item 7</x:String>
+                    <x:String>Item 8</x:String>
+                    <x:String>Item 9</x:String>
+                    <x:String>Item 10</x:String>
+                    <x:String>Item 11</x:String>
+                    <x:String>Item 12</x:String>
+                    <x:String>Item 13</x:String>
+                    <x:String>Item 14</x:String>
+                </ListView>
             </StackPanel>
         </local:ControlExample>
 
@@ -123,13 +136,15 @@
                         <Bold>Extended</Bold> allows the user to select multiple items by using Ctrl+Click to select the individual items they want, or Shift+Click to select a range of contiguous items.
                     </Paragraph>
                 </RichTextBlock>
-                <ListView x:Name="Control2" 
+                <ListView x:Name="Control2"
                           ItemTemplate="{StaticResource ContactListViewTemplate}"
                           BorderThickness="1"
                           BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
                           Width="400" 
                           Height="400"
                           HorizontalAlignment="Left"/>
+
+                          
             </StackPanel>
             <local:ControlExample.Options>
                 <StackPanel>

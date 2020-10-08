@@ -1,4 +1,4 @@
-﻿//*********************************************************
+//*********************************************************
 //
 // Copyright (c) Microsoft. All rights reserved.
 // THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
@@ -19,7 +19,7 @@ namespace AppUIBasics.ControlPages
     public sealed partial class GridViewPage : ItemsPageBase
     {
         ItemsWrapGrid StyledGridIWG;
-
+        List<string> tempGridStrings = new List<string>();
         public GridViewPage()
         {
             this.InitializeComponent();
@@ -35,6 +35,8 @@ namespace AppUIBasics.ControlPages
             ObservableCollection<CustomDataObject> Items = new ObservableCollection<CustomDataObject>(tempList);
             ObservableCollection<CustomDataObject> Items2 = new ObservableCollection<CustomDataObject>(tempList);
             BasicGridView.ItemsSource = Items2;
+
+
             ContentGridView.ItemsSource = Items;
             StyledGrid.ItemsSource = Items;
 
