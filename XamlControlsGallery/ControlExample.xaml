@@ -106,7 +106,7 @@
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Padding="12"
-                    Background="{ThemeResource SystemControlBackgroundAltHighBrush}"
+                    Background="{ThemeResource DefaultApplicationBackgroundThemeBrush}"
                     HorizontalContentAlignment="{x:Bind HorizontalContentAlignment}"
                     Content="{x:Bind Example}" />
 
