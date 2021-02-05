@@ -77,7 +77,8 @@
             PaneOpening="NavigationViewControl_PaneOpened"
             PaneClosing="NavigationViewControl_PaneClosing"
             DisplayModeChanged="NavigationViewControl_DisplayModeChanged"
-            ItemInvoked="OnNavigationViewItemInvoked">
+            ItemInvoked="OnNavigationViewItemInvoked"
+            Loaded="OnNavigationViewControlLoaded">
             <muxc:NavigationView.AutoSuggestBox>
                 <AutoSuggestBox
                     x:Name="controlsSearchBox"
@@ -95,7 +96,7 @@
                 </AutoSuggestBox>
             </muxc:NavigationView.AutoSuggestBox>
 
-            <Frame x:Name="rootFrame" Navigated="OnRootFrameNavigated" CornerRadius="{StaticResource ControlCornerRadius}"/>
+            <Frame x:Name="rootFrame" Navigated="OnRootFrameNavigated"/>
         </muxc:NavigationView>
     </Grid>
 </Page>
