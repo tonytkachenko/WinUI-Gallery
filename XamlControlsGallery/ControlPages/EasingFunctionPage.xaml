@@ -24,8 +24,9 @@
                     <Storyboard x:Name="Storyboard1">
                         <DoubleAnimation Storyboard.TargetName="Translation1" Storyboard.TargetProperty="X"  Duration="0:0:0.5">
                             <DoubleAnimation.EasingFunction>
+                                <
                                 <!--<CubicEase EasingMode=""-->
-                                <CircleEase EasingMode="easeOutFast" />
+                                < EasingMode="Linear" />
                             </DoubleAnimation.EasingFunction>
                         </DoubleAnimation>
                     </Storyboard>
