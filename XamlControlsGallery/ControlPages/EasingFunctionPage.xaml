@@ -12,18 +12,20 @@
 
     <StackPanel>
         <RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}">
-            <Paragraph>- Use the Standard easing function for animating general property changes.</Paragraph>
-            <Paragraph>- Use the Accelerate easing function to animate objects that are exiting the scene.</Paragraph>
-            <Paragraph>- Use the Decelerate easing function to animate objects that are entering the scene.</Paragraph>
+            <Paragraph>- Use the Invoke easing functions for elements appearing</Paragraph>
+            <Paragraph>- Use the Dismiss easing functions for elements disappearing</Paragraph>
+            <Paragraph>- Use the Point to Point easing function for elements that stay visible</Paragraph>
+            <Paragraph>- Use the Fade easing function for items fading in and out</Paragraph>
         </RichTextBlock>
 
-        <local:ControlExample x:Name="Example1" HeaderText="Standard Easing Function">
-            <Grid>
+        <local:ControlExample x:Name="Example1" HeaderText="Invoke Easing - Fast">
+            <Grid Height="150">
                 <Grid.Resources>
                     <Storyboard x:Name="Storyboard1">
                         <DoubleAnimation Storyboard.TargetName="Translation1" Storyboard.TargetProperty="X"  Duration="0:0:0.5">
                             <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseInOut" />
+                                <!--<CubicEase EasingMode=""-->
+                                <CircleEase EasingMode="easeOutFast" />
                             </DoubleAnimation.EasingFunction>
                         </DoubleAnimation>
                     </Storyboard>
@@ -32,12 +34,22 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" MinWidth="300"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Animate" Click="Button1_Click" AutomationProperties.Name="Animate rectangle using Standard Easing Function" />
-                <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}" Grid.Column="1">
-                    <Rectangle.RenderTransform>
-                        <TranslateTransform x:Name="Translation1" />
-                    </Rectangle.RenderTransform>
-                </Rectangle>
+                <StackPanel>
+                    <RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}" Margin="0, 0, 0, 15">
+                        <Paragraph>Ease: Cubic-bezier(0,0,0,1)</Paragraph>
+                        <Paragraph>Timing: 167, 333, 500ms</Paragraph>
+                        <Paragraph>Apply to: Position, Scale, Rotation</Paragraph>
+                        <Paragraph>Usage: For direct and fast entrance of elements.</Paragraph>
+                    </RichTextBlock>
+                    <StackPanel Orientation="Horizontal" Spacing="120">
+                        <Button Content="Animate" Click="Button1_Click" AutomationProperties.Name="Animate rectangle using Standard Easing Function" />
+                        <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}" Grid.Column="1">
+                            <Rectangle.RenderTransform>
+                                <TranslateTransform x:Name="Translation1" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </StackPanel>
+                </StackPanel>
             </Grid>
 
             <local:ControlExample.Xaml>
@@ -53,7 +65,7 @@
 </local:ControlExample.Xaml>
         </local:ControlExample>
 
-        <local:ControlExample x:Name="Example2" HeaderText="Accelerate Easing Function">
+        <local:ControlExample x:Name="Example2" HeaderText="Invoke Easing - Strong">
             <Grid>
                 <Grid.Resources>
                     <Storyboard x:Name="Storyboard2">
@@ -68,12 +80,22 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" MinWidth="300"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Animate" Click="Button2_Click" AutomationProperties.Name="Animate rectangle using Accelerate Easing Function" />
-                <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}" Grid.Column="1">
-                    <Rectangle.RenderTransform>
-                        <TranslateTransform x:Name="Translation2" />
-                    </Rectangle.RenderTransform>
-                </Rectangle>
+                <StackPanel>
+                    <RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}" Margin="0, 0, 0, 15">
+                        <Paragraph>Ease: cubic-Bezier(0.13, 1.62, 0.00, 0.92)</Paragraph>
+                        <Paragraph>Timing: 333ms</Paragraph>
+                        <Paragraph>Apply to: Position, Scale</Paragraph>
+                        <Paragraph>Usage: Calls attention to new elements when they enter.</Paragraph>
+                    </RichTextBlock>
+                    <StackPanel Orientation="Horizontal" Spacing="120">
+                        <Button Content="Animate" Click="Button2_Click" AutomationProperties.Name="Animate rectangle using Accelerate Easing Function" />
+                        <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}" Grid.Column="1">
+                            <Rectangle.RenderTransform>
+                                <TranslateTransform x:Name="Translation2" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </StackPanel>
+                </StackPanel>
             </Grid>
 
             <local:ControlExample.Xaml>
@@ -90,7 +112,7 @@
         </local:ControlExample>
 
 
-        <local:ControlExample x:Name="Example3" HeaderText="Decelerate Easing Function">
+        <local:ControlExample x:Name="Example3" HeaderText="Dismiss Easing - Fast">
             <Grid>
                 <Grid.Resources>
                     <Storyboard x:Name="Storyboard3">
@@ -105,12 +127,22 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" MinWidth="300"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Animate" Click="Button3_Click" AutomationProperties.Name="Animate rectangle using Decelerate Easing Function" />
-                <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}" Grid.Column="1">
-                    <Rectangle.RenderTransform>
-                        <TranslateTransform x:Name="Translation3" />
-                    </Rectangle.RenderTransform>
-                </Rectangle>
+                <StackPanel>
+                    <RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}" Margin="0, 0, 0, 15">
+                        <Paragraph>Ease: Cubic-bezier(0,0,0,1)</Paragraph>
+                        <Paragraph>Timing: 167ms</Paragraph>
+                        <Paragraph>Apply to: Position, Scale</Paragraph>
+                        <Paragraph>Usage: For transitions that dismiss a surface without going off a screen edge. (Always combine with a fade out unless going off screen.</Paragraph>
+                    </RichTextBlock>
+                    <StackPanel Orientation="Horizontal" Spacing="120">
+                        <Button Content="Animate" Click="Button3_Click" AutomationProperties.Name="Animate rectangle using Decelerate Easing Function" />
+                        <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}" Grid.Column="1">
+                            <Rectangle.RenderTransform>
+                                <TranslateTransform x:Name="Translation3" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </StackPanel>
+                </StackPanel>
             </Grid>
             <local:ControlExample.Xaml>
                 <x:String xml:space="preserve">
@@ -125,7 +157,7 @@
             </local:ControlExample.Xaml>
         </local:ControlExample>
 
-        <local:ControlExample x:Name="Example4" HeaderText="Other XAML Easing Functions">
+        <local:ControlExample x:Name="Example4" HeaderText="Dismiss Easing - Soft">
             <local:ControlExample.Options>
                 <StackPanel>
                     <ComboBox x:Name="EasingComboBox" AutomationProperties.Name="Easing type" ItemsSource="{x:Bind EasingFunctions}" 
@@ -148,14 +180,23 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" MinWidth="300"/>
                 </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}" Margin="0, 0, 0, 15">
+                        <Paragraph>Ease: Cubic-bezier(1,0,1,1)</Paragraph>
+                        <Paragraph>Timing: 167ms</Paragraph>
+                        <Paragraph>Apply to: Position, Scale</Paragraph>
+                        <Paragraph>Usage: For transitions that dismiss a surface off screen. It lingers initially to confirm a user action before dismissing.</Paragraph>
+                    </RichTextBlock>
+                    <StackPanel Orientation="Horizontal" Spacing="120">
+                        <Button Content="Animate" Click="Button4_Click" AutomationProperties.Name="Animate rectangle using an Easing Function" />
 
-                <Button Content="Animate" Click="Button4_Click" AutomationProperties.Name="Animate rectangle using an Easing Function" />
-
-                <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}" Grid.Column="1" >
-                    <Rectangle.RenderTransform>
-                        <TranslateTransform x:Name="Translation4" />
-                    </Rectangle.RenderTransform>
-                </Rectangle>
+                        <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}" Grid.Column="1" >
+                            <Rectangle.RenderTransform>
+                                <TranslateTransform x:Name="Translation4" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </StackPanel>
+                </StackPanel>
             </Grid>
 
             <local:ControlExample.Xaml>
@@ -172,6 +213,98 @@
             <local:ControlExample.Substitutions>
                 <local:ControlExampleSubstitution Key="EasingFunction" Value="{x:Bind ((control:NamedEasingFunction)EasingComboBox.SelectedItem).Name, Mode=OneWay}" />
             </local:ControlExample.Substitutions>
+        </local:ControlExample>
+
+
+        <local:ControlExample x:Name="Example5" HeaderText="Point to Point Easing">
+            <Grid>
+                <Grid.Resources>
+                    <Storyboard x:Name="Storyboard5">
+                        <DoubleAnimation Storyboard.TargetName="Translation5" Storyboard.TargetProperty="X" Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <ExponentialEase Exponent="7" EasingMode="EaseOut" />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" MinWidth="300"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}" Margin="0, 0, 0, 15">
+                        <Paragraph>Ease: Cubic-bezier(0.55,0.55,0,1)</Paragraph>
+                        <Paragraph>Timing: 167, 333, 500ms</Paragraph>
+                        <Paragraph>Apply to: Position, Scale, Rotation</Paragraph>
+                        <Paragraph>Usage: For transitions that keep the same element on screen going from one place to another.</Paragraph>
+                    </RichTextBlock>
+                    <StackPanel Orientation="Horizontal" Spacing="120">
+                        <Button Content="Animate" Click="Button5_Click" AutomationProperties.Name="Animate rectangle using Decelerate Easing Function" />
+                        <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}" Grid.Column="1">
+                            <Rectangle.RenderTransform>
+                                <TranslateTransform x:Name="Translation5" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <local:ControlExample.Xaml>
+                <x:String xml:space="preserve">
+&lt;Storyboard x:Name="Storyboard3"&gt;
+    &lt;DoubleAnimation Storyboard.TargetName="Translation" Storyboard.TargetProperty="X" From="0" To="200" &gt;
+        &lt;DoubleAnimation.EasingFunction&gt;
+            &lt;ExponentialEase Exponent="7" EasingMode="EaseOut" /&gt;
+        &lt;/DoubleAnimation.EasingFunction&gt;
+    &lt;/DoubleAnimation&gt;
+&lt;/Storyboard&gt;
+                </x:String>
+            </local:ControlExample.Xaml>
+        </local:ControlExample>
+
+
+        <local:ControlExample x:Name="Example6" HeaderText="Fade On + Off">
+            <Grid>
+                <Grid.Resources>
+                    <Storyboard x:Name="Storyboard6">
+                        <DoubleAnimation Storyboard.TargetName="Translation6" Storyboard.TargetProperty="X" Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <ExponentialEase Exponent="7" EasingMode="EaseOut" />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" MinWidth="300"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}" Margin="0, 0, 0, 15">
+                        <Paragraph>Ease: Linear</Paragraph>
+                        <Paragraph>Timing: 83ms</Paragraph>
+                        <Paragraph>Apply to: Opacity</Paragraph>
+                        <Paragraph>Usage:  For elements that appear and disappear without movement.</Paragraph>
+                    </RichTextBlock>
+                    <StackPanel Orientation="Horizontal" Spacing="120">
+                        <Button Content="Animate" Click="Button6_Click" AutomationProperties.Name="Animate rectangle using Decelerate Easing Function" />
+                        <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}" Grid.Column="1">
+                            <Rectangle.RenderTransform>
+                                <TranslateTransform x:Name="Translation6" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <local:ControlExample.Xaml>
+                <x:String xml:space="preserve">
+&lt;Storyboard x:Name="Storyboard3"&gt;
+    &lt;DoubleAnimation Storyboard.TargetName="Translation" Storyboard.TargetProperty="X" From="0" To="200" &gt;
+        &lt;DoubleAnimation.EasingFunction&gt;
+            &lt;ExponentialEase Exponent="7" EasingMode="EaseOut" /&gt;
+        &lt;/DoubleAnimation.EasingFunction&gt;
+    &lt;/DoubleAnimation&gt;
+&lt;/Storyboard&gt;
+                </x:String>
+            </local:ControlExample.Xaml>
         </local:ControlExample>
     </StackPanel>
 </Page>

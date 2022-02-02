@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -79,6 +79,21 @@ namespace AppUIBasics.ControlPages
             Storyboard4.Children[0].SetValue(DoubleAnimation.FromProperty, Translation4.X);
             Storyboard4.Children[0].SetValue(DoubleAnimation.ToProperty, Translation4.X > 0 ? 0 : 200);
             Storyboard4.Begin();
+        }
+
+        private void Button5_Click(object sender, RoutedEventArgs e)
+        {
+            Storyboard5.Children[0].SetValue(DoubleAnimation.FromProperty, Translation3.X);
+            Storyboard5.Children[0].SetValue(DoubleAnimation.ToProperty, Translation3.X > 0 ? 0 : 200);
+            Storyboard5.Begin();
+        }
+
+
+        private void Button6_Click(object sender, RoutedEventArgs e)
+        {
+            Storyboard6.Children[0].SetValue(DoubleAnimation.FromProperty, Translation3.X);
+            Storyboard6.Children[0].SetValue(DoubleAnimation.ToProperty, Translation3.X > 0 ? 0 : 200);
+            Storyboard6.Begin();
         }
 
         EasingMode GetEaseValue()
